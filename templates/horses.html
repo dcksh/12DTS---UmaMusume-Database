@@ -5,8 +5,56 @@
     <title>Title</title>
 </head>
 <body>
+<ul>
+    <header>
+        <a href="/" class="home-button">🏠</a>
+        <h1>Uma Musume Database</h1>
+    </header>
+    <form action="/search_horses" method="POST">
+    <select name="column">
+        <option value="eng_name">English Name</option>
+        <option value="rom_name">Romaji Name</option>
+        <option value="jap_name">Japanese Name</option>
+        <option value="sex">Sex</option>
+        <option value="dam">Dam</option>
+        <option value="sire">Sire</option>
+        <option value="birth_year">Birth Year</option>
+        <option value="horse_weight">Horse Weight</option>
+        <option value="country">Country</option>
+        <option value="jockey">Jockey</option>
+        <option value="owner">Owner</option>
+        <option value="farm">Farm</option>
+        <option value="record">Record</option>
+        <option value="total_earnings">Total Earnings</option>
+        <option value="notable_wins">Notable Wins</option>
+        <option value="offspring">Offspring</option>
+        <option value="deceased_status">Deceased?</option>
+    </select>
+        <input type="text" name="search">
+        <button type="submit">Search</button>
+    </form>
+</ul>
 <h2>Horses</h2>
 <table>
+    <tr>
+        <th>English Name</th>
+        <th>Romaji Name</th>
+        <th>Japanese Name</th>
+        <th>Sex</th>
+        <th>Dam</th>
+        <th>Sire</th>
+        <th>Birth Year</th>
+        <th>Horse Weight</th>
+        <th>Country</th>
+        <th>Jockey</th>
+        <th>Owner</th>
+        <th>Farm</th>
+        <th>Record</th>
+        <th>Total Earnings</th>
+        <th>Notable Wins</th>
+        <th>Offspring</th>
+        <th>Deceased?</th>
+    </tr>
     {% for horse in horses %}
     <tr>
         <td>{{ horse[0] }}</td>
@@ -23,6 +71,15 @@
         <td>{{ horse[11] }}</td>
         <td>{{ horse[12] }}</td>
         <td>{{ horse[13] }}</td>
+        <td>{{ horse[14] }}</td>
+        <td>{{ horse[15] }}</td>
+        <td>
+            {% if horse[16] == 1 %}
+                Yes
+            {% else %}
+                No
+            {% endif %}
+        </td>
     </tr>
     {% endfor %}
 </table>

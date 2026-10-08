@@ -5,37 +5,109 @@
     <title>Title</title>
 </head>
 <body>
+<ul>
+    <header>
+        <a href="/" class="home-button">🏠</a>
+        <h1>Uma Musume Database</h1>
+    </header>
+    <form action="/search_characters" method="POST">
+    <select name="column">
+        <option value="eng_name">English Name</option>
+        <option value="rom_name">Romaji Name</option>
+        <option value="jap_name">Japanese Name</option>
+        <option value="star_rarity">Star Rarity</option>
+        <option value="voice_actor">Voice Actor</option>
+        <option value="height">Height</option>
+        <option value="measurements">Measurements</option>
+        <option value="character_weight">Weight</option>
+        <option value="shoe_size">Shoe Size</option>
+        <option value="roommate">Roommate</option>
+        <option value="emoji">Emoji</option>
+        <option value="likes">Likes</option>
+        <option value="dislikes">Dislikes</option>
+        <option value="ears">Ears</option>
+        <option value="tail">Tail</option>
+        <option value="family">Family</option>
+        <option value="personal_rule">Personal Rule</option>
+        <option value="background">Background</option>
+        <option value="secrets">Secrets</option>
+        <option value="global_status">Global Status</option>
+        <option value="strategy_aptitude">Strategy Aptitude</option>
+        <option value="distance_aptitude">Distance Aptitude</option>
+        <option value="surface_aptitude">Surface Aptitude</option>
+        <option value="unique_skill">Unique Skill</option>
+        <option value="alt_outfits">Alternate Outfits</option>
+    </select>
+        <input type="text" name="search">
+        <button type="submit">Search</button>
+    </form>
+</ul>
 <h2>Characters</h2>
-<table>
-    {% for character in characters %}
-    <tr>
-        <td>{{ character[0] }}</td>
-        <td>{{ character[1] }}</td>
-        <td>{{ character[2] }}</td>
-        <td>{{ character[3] }}</td>
-        <td>{{ character[4] }}</td>
-        <td>{{ character[5] }}</td>
-        <td>{{ character[6] }}</td>
-        <td>{{ character[7] }}</td>
-        <td>{{ character[8] }}</td>
-        <td>{{ character[9] }}</td>
-        <td>{{ character[10] }}</td>
-        <td>{{ character[11] }}</td>
-        <td>{{ character[12] }}</td>
-        <td>{{ character[13] }}</td>
-        <td>{{ character[14] }}</td>
-        <td>{{ character[15] }}</td>
-        <td>{{ character[16] }}</td>
-        <td>{{ character[17] }}</td>
-        <td>{{ character[18] }}</td>
-        <td>{{ character[19] }}</td>
-        <td>{{ character[20] }}</td>
-        <td>{{ character[21] }}</td>
-        <td>{{ character[22] }}</td>
-        <td>{{ character[23] }}</td>
-        <td>{{ character[24] }}</td>
-    </tr>
-    {% endfor %}
-</table>
+<div class="table-container">
+    <table>
+        <tr>
+            <th>English Name</th>
+            <th>Romaji Name</th>
+            <th>Japanese Name</th>
+            <th>Star Rarity</th>
+            <th>Voice Actor</th>
+            <th>Height</th>
+            <th>Measurements</th>
+            <th>Weight</th>
+            <th>Shoe Size</th>
+            <th>Roommate</th>
+            <th>Emoji</th>
+            <th>Likes</th>
+            <th>Dislikes</th>
+            <th>Ears</th>
+            <th>Tail</th>
+            <th>Family</th>
+            <th>Personal Rule</th>
+            <th>Background</th>
+            <th>Secrets</th>
+            <th>Global?</th>
+            <th>Strategy Aptitude</th>
+            <th>Distance Aptitude</th>
+            <th>Surface Aptitude</th>
+            <th>Unique Skill</th>
+            <th>Alternate Outfits</th>
+        </tr>
+        {% for character in characters %}
+        <tr>
+            <td>{{ character[0] }}</td>
+            <td>{{ character[1] }}</td>
+            <td>{{ character[2] }}</td>
+            <td>{{ character[3] }}</td>
+            <td>{{ character[4] }}</td>
+            <td>{{ character[5] }}</td>
+            <td>{{ character[6] }}</td>
+            <td>{{ character[7] }}</td>
+            <td>{{ character[8] }}</td>
+            <td>{{ character[9] }}</td>
+            <td>{{ character[10] }}</td>
+            <td>{{ character[11] }}</td>
+            <td>{{ character[12] }}</td>
+            <td>{{ character[13] }}</td>
+            <td>{{ character[14] }}</td>
+            <td>{{ character[15] }}</td>
+            <td>{{ character[16] }}</td>
+            <td>{{ character[17] }}</td>
+            <td>{{ character[18] }}</td>
+            <td>
+                {% if character[19] == 1 %}
+                    Yes
+                {% else %}
+                    No
+                {% endif %}
+            </td>
+            <td>{{ character[20] }}</td>
+            <td>{{ character[21] }}</td>
+            <td>{{ character[22] }}</td>
+            <td>{{ character[23] }}</td>
+            <td>{{ character[24] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>d
 </body>
 </html>
