@@ -78,3 +78,6 @@ def search_horses():
     con.close()
 
     return render_template("horses.html", horses=horse_list)
+
+@app.route ('/sort_column')
+def sort_column():

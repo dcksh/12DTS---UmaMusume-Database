@@ -36,53 +36,55 @@
     </form>
 </ul>
 <h2>Horses</h2>
-<table>
-    <tr>
-        <th>English Name</th>
-        <th>Romaji Name</th>
-        <th>Japanese Name</th>
-        <th>Sex</th>
-        <th>Dam</th>
-        <th>Sire</th>
-        <th>Birth Year</th>
-        <th>Horse Weight</th>
-        <th>Country</th>
-        <th>Jockey</th>
-        <th>Owner</th>
-        <th>Farm</th>
-        <th>Record</th>
-        <th>Total Earnings</th>
-        <th>Notable Wins</th>
-        <th>Offspring</th>
-        <th>Deceased?</th>
-    </tr>
-    {% for horse in horses %}
-    <tr>
-        <td>{{ horse[0] }}</td>
-        <td>{{ horse[1] }}</td>
-        <td>{{ horse[2] }}</td>
-        <td>{{ horse[3] }}</td>
-        <td>{{ horse[4] }}</td>
-        <td>{{ horse[5] }}</td>
-        <td>{{ horse[6] }}</td>
-        <td>{{ horse[7] }}</td>
-        <td>{{ horse[8] }}</td>
-        <td>{{ horse[9] }}</td>
-        <td>{{ horse[10] }}</td>
-        <td>{{ horse[11] }}</td>
-        <td>{{ horse[12] }}</td>
-        <td>{{ horse[13] }}</td>
-        <td>{{ horse[14] }}</td>
-        <td>{{ horse[15] }}</td>
-        <td>
-            {% if horse[16] == 1 %}
-                Yes
-            {% else %}
-                No
-            {% endif %}
-        </td>
-    </tr>
-    {% endfor %}
-</table>
+<div class="table-container">
+    <table>
+        <tr>
+            <th>English Name</th>
+            <th>Romaji Name</th>
+            <th>Japanese Name</th>
+            <th>Sex</th>
+            <th>Dam</th>
+            <th>Sire</th>
+            <th>Birth Year</th>
+            <th>Horse Weight</th>
+            <th>Country</th>
+            <th>Jockey</th>
+            <th>Owner</th>
+            <th>Farm</th>
+            <th>Record</th>
+            <th>Total Earnings</th>
+            <th>Notable Wins</th>
+            <th>Offspring</th>
+            <th>Deceased?</th>
+        </tr>
+        {% for horse in horses %}
+        <tr>
+            <td>{{ horse[0] }}</td>
+            <td>{{ horse[1] }}</td>
+            <td>{{ horse[2] }}</td>
+            <td>{{ horse[3] }}</td>
+            <td>{{ horse[4] }}</td>
+            <td>{{ horse[5] }}</td>
+            <td>{{ horse[6] }}</td>
+            <td>{{ horse[7] }}</td>
+            <td>{{ horse[8] }}</td>
+            <td>{{ horse[9] }}</td>
+            <td>{{ horse[10] }}</td>
+            <td>{{ horse[11] }}</td>
+            <td>{{ horse[12] }}</td>
+            <td>{{ horse[13] }}</td>
+            <td>{{ horse[14] }}</td>
+            <td>{{ horse[15] }}</td>
+            <td>
+                {% if horse[16] == 1 %}
+                    Yes
+                {% else %}
+                    No
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 </body>
 </html>
