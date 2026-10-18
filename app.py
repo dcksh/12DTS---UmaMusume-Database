@@ -19,7 +19,7 @@ def render_home():
 
 @app.route('/characters')
 def render_characters():
-    query = "SELECT id, eng_name, rom_name, jap_name, star_rarity, voice_actor, height, measurements, character_weight, shoe_size, roommate, emoji, likes, dislikes, ears, tail, family, personal_rule, background, secrets, global_status, strategy_aptitude, distance_aptitude, surface_aptitude, unique_skill, alt_outfits FROM umamusume"
+    query = "SELECT ID, eng_name, rom_name, jap_name, star_rarity, voice_actor, height, measurements, character_weight, shoe_size, roommate, emoji, likes, dislikes, ears, tail, family, personal_rule, background, secrets, global_status, strategy_aptitude, distance_aptitude, surface_aptitude, unique_skill, alt_outfits FROM umamusume"
     con = create_connection(DATABASE)
     cur = con.cursor()
     cur.execute(query)
@@ -29,7 +29,7 @@ def render_characters():
 
 @app.route('/horses')
 def render_horses():
-    query = "SELECT id, eng_name, rom_name, jap_name, sex, dam, sire, birth_year, horse_weight, country, jockey, owner, farm, record, total_earnings, notable_wins, offspring, deceased_status FROM umamusume"
+    query = "SELECT ID, eng_name, rom_name, jap_name, sex, dam, sire, birth_year, horse_weight, country, jockey, owner, farm, record, total_earnings, notable_wins, offspring, deceased_status FROM umamusume"
     con = create_connection(DATABASE)
     cur = con.cursor()
     cur.execute(query)
@@ -49,7 +49,7 @@ def search_characters():
             search = "0"
 
 
-    query = "SELECT eng_name, rom_name, jap_name, star_rarity, voice_actor, height, measurements, character_weight, shoe_size, roommate, emoji, likes, dislikes, ears, tail, family, personal_rule, background, secrets, global_status, strategy_aptitude, distance_aptitude, surface_aptitude, unique_skill, alt_outfits FROM umamusume WHERE " + column + " LIKE ?"
+    query = "SELECT ID, eng_name, rom_name, jap_name, star_rarity, voice_actor, height, measurements, character_weight, shoe_size, roommate, emoji, likes, dislikes, ears, tail, family, personal_rule, background, secrets, global_status, strategy_aptitude, distance_aptitude, surface_aptitude, unique_skill, alt_outfits FROM umamusume WHERE " + column + " LIKE ?"
     con = create_connection(DATABASE)
     cur = con.cursor()
     cur.execute(query, (f"%{search}%",))
@@ -70,7 +70,7 @@ def search_horses():
         elif search.lower() == "no":
             search = "FALSE"
 
-    query = "SELECT eng_name, rom_name, jap_name, sex, dam, sire, birth_year, horse_weight, country, jockey, owner, farm, record, total_earnings, notable_wins, offspring, deceased_status FROM umamusume WHERE " + column + " LIKE ?"
+    query = "SELECT ID, eng_name, rom_name, jap_name, sex, dam, sire, birth_year, horse_weight, country, jockey, owner, farm, record, total_earnings, notable_wins, offspring, deceased_status FROM umamusume WHERE " + column + " LIKE ?"
     con = create_connection(DATABASE)
     cur = con.cursor()
     cur.execute(query, (f"%{search}%",))
@@ -79,7 +79,7 @@ def search_horses():
 
     return render_template("horses.html", horses=horse_list)
 
-@app.route('/sort_character')
+@app.route('/sort_characters')
 def sort_column():
     column = request.args.get('column', 'eng_name')
     order = request.args.get('order', 'ASC').upper()

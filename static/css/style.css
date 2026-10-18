@@ -77,11 +77,10 @@ button:hover {
 table {
     width: 95%;
     margin: auto;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     background-color: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    overflow: hidden;
 }
 
 th {
@@ -90,6 +89,10 @@ th {
     padding: 14px;
     text-align: left;
     white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
 }
 
 td {
@@ -137,7 +140,6 @@ tr:hover {
     overflow: hidden;
     text-decoration: none;
     color: #292936;
-    box-shadow: 0 4px 15px #ddd;
 }
 
 .home-card img {
