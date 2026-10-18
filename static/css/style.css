@@ -158,3 +158,30 @@ tr:hover {
 .home-card:hover {
     background: #ffe5eb;
 }
+
+th a {
+    color: white;
+    text-decoration: none;
+}
+
+th a:hover {
+    color: #ffe5eb;
+    text-decoration: underline;
+}
+
+td:nth-child(2) {
+    position: sticky;
+    left: 0;
+    background-color: #ffe4ec;
+    color: #702b46;
+    z-index: 2;
+}
+
+th:nth-child(2) {
+    background-color: #e85b7a;
+    color: white;
+}
+
+tr:hover td:nth-child(2) {
+    background-color: #ffc5d5;
+}

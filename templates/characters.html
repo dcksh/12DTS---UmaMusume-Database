@@ -48,12 +48,29 @@
 <div class="table-container">
     <table>
         <tr>
-            <th>English Name</th>
+            <th>
+                ID
+                <a href="/sort_characters?column=ID&order=ASC">↑</a>
+                <a href="/sort_characters?column=ID&order=DESC">↓</a>
+            </th>
+            <th>
+                English Name
+                <a href="/sort_characters?column=eng_name&order=ASC">↑</a>
+                <a href="/sort_characters?column=eng_name&order=DESC">↓</a>
+            </th>
             <th>Romaji Name</th>
             <th>Japanese Name</th>
-            <th>Star Rarity</th>
+            <th>
+                Star Rarity
+                <a href="/sort_characters?column=star_rarity&order=ASC">↑</a>
+                <a href="/sort_characters?column=star_rarity&order=DESC">↓</a>
+            </th>
             <th>Voice Actor</th>
-            <th>Height</th>
+            <th>
+                Height
+                <a href="/sort_characters?column=height&order=ASC">↑</a>
+                <a href="/sort_characters?column=height&order=DESC">↓</a>
+            </th>
             <th>Measurements</th>
             <th>Weight</th>
             <th>Shoe Size</th>
@@ -95,18 +112,19 @@
             <td>{{ character[16] }}</td>
             <td>{{ character[17] }}</td>
             <td>{{ character[18] }}</td>
+            <td>{{ character[19] }}</td>
             <td>
-                {% if character[19] == 1 %}
+                {% if character[20] == 1 %}
                     Yes
                 {% else %}
                     No
                 {% endif %}
             </td>
-            <td>{{ character[20] }}</td>
             <td>{{ character[21] }}</td>
             <td>{{ character[22] }}</td>
             <td>{{ character[23] }}</td>
             <td>{{ character[24] }}</td>
+            <td>{{ character[25] }}</td>
         </tr>
         {% endfor %}
     </table>

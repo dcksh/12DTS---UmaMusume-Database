@@ -39,22 +39,47 @@
 <div class="table-container">
     <table>
         <tr>
-            <th>English Name</th>
+            <th>
+                ID
+                <a href="/sort_horses?column=ID&order=ASC">↑</a>
+                <a href="/sort_horses?column=ID&order=DESC">↓</a>
+            </th>
+            <th>
+                English Name
+                <a href="/sort_horses?column=eng_name&order=ASC">↑</a>
+                <a href="/sort_horses?column=eng_name&order=DESC">↓</a>
+            </th>
             <th>Romaji Name</th>
             <th>Japanese Name</th>
             <th>Sex</th>
             <th>Dam</th>
             <th>Sire</th>
-            <th>Birth Year</th>
-            <th>Horse Weight</th>
+            <th>
+                Birth Year
+                <a href="/sort_horses?column=birth_year&order=ASC">↑</a>
+                <a href="/sort_horses?column=birth_year&order=DESC">↓</a>
+            </th>
+            <th>
+                Horse Weight
+                <a href="/sort_horses?column=horse_weight&order=ASC">↑</a>
+                <a href="/sort_horses?column=horse_weight&order=DESC">↓</a>
+            </th>
             <th>Country</th>
             <th>Jockey</th>
             <th>Owner</th>
             <th>Farm</th>
             <th>Record</th>
-            <th>Total Earnings</th>
+            <th>
+                Total Earnings
+                <a href="/sort_horses?column=total_earnings&order=ASC">↑</a>
+                <a href="/sort_horses?column=total_earnings&order=DESC">↓</a>
+            </th>
             <th>Notable Wins</th>
-            <th>Offspring</th>
+            <th>
+                Offspring
+                <a href="/sort_horses?column=offspring&order=ASC">↑</a>
+                <a href="/sort_horses?column=offspring&order=DESC">↓</a>
+            </th>
             <th>Deceased?</th>
         </tr>
         {% for horse in horses %}
@@ -73,10 +98,11 @@
             <td>{{ horse[11] }}</td>
             <td>{{ horse[12] }}</td>
             <td>{{ horse[13] }}</td>
-            <td>{{ horse[14] }}</td>
+            <td>¥{{ "{:,}".format(horse[14]) }}</td>
             <td>{{ horse[15] }}</td>
+            <td>{{ horse[16] }}</td>
             <td>
-                {% if horse[16] == 1 %}
+                {% if horse[17] == 1 %}
                     Yes
                 {% else %}
                     No
