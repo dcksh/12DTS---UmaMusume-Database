@@ -187,3 +187,21 @@ th:nth-child(2) {
 tr:hover td:nth-child(2) {
     background-color: #ffc5d5;
 }
+
+
+.site-footer {
+    background-color: #292936;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.site-footer p {
+    color: white;
+    margin: 8px 0;
+}
+
